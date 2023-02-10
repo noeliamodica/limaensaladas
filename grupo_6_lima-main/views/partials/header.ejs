@@ -1,0 +1,46 @@
+<header>
+    <nav class="navBar">
+        <div class="dropdown">
+            <button class="btn btn-secondary " type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                id="burger">
+                <i class="fa-sharp fa-solid fa-bars"></i>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                <li><a class="dropdown-item" href="/productCart">Carrito</a></li>
+                <li><a class="dropdown-item" href="/contacto">Contacto</a></li>
+                <li><a class="dropdown-item" href="/nosotros">Nosotros</a></li>
+                <li><a class="dropdown-item" href="/users/register">Registrarse</a></li>
+                <li><a class="dropdown-item" href="/users/login">Login</a></li>
+                <li><a class="dropdown-item" href="/products">Ensaladas</a></li>
+
+            </ul>
+        </div>
+        <div class="logo">
+            <a href="/" class="logotipo"><img src="/images/LOGO.png" alt="logo"></a>
+            <a href="/"><img src="/images/Lima.png" alt="Lima"></a>
+        </div>
+        <div class="headerMenu">
+            <a href="/nosotros"><b>Nosotros</b></a>
+            <a href="/products"><b>Ensaladas</b></a>
+            <a href="/contacto"><b>Contacto</b></a>
+            <% if (locals.isLogged) { %>
+                <div class="navegador">
+                    <ul><img src="/images/avatars/<%= locals.userLogged.avatar %>" width="40"
+                            style="border-radius: 100%">
+                        <li class="seccion"><a href="/users/profile">Mi perfil</a></li>
+                        <li class="seccion"><a href="/users/logout">Cerrar sesión</a></li>
+                    </ul>
+                </div>
+
+                <% } else { %>
+                    <div class="right">
+                        <a href="/users/login"><b>Iniciar sesión</b></a>
+                    </div>
+                    <div class="right">
+                        <a href="/users/register"><b>Registrarse</b></a>
+                    </div>
+                    <% } %>
+        </div>
+    </nav>
+</header>
